@@ -41,7 +41,6 @@
 		60C3D50025991E9F005C505F /* SchoolCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3D4FF25991E9F005C505F /* SchoolCellViewModel.swift */; };
 		60DCAAAE258FE6A900B677FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DCAAAD258FE6A900B677FC /* AppDelegate.swift */; };
 		60DCAAB0258FE6A900B677FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DCAAAF258FE6A900B677FC /* SceneDelegate.swift */; };
-		60DCAAB2258FE6A900B677FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DCAAB1258FE6A900B677FC /* ViewController.swift */; };
 		60DCAAB7258FE6AC00B677FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60DCAAB6258FE6AC00B677FC /* Assets.xcassets */; };
 		60DCAABA258FE6AC00B677FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60DCAAB8258FE6AC00B677FC /* LaunchScreen.storyboard */; };
 		60DCAAC5258FE6AD00B677FC /* _0201220_Gifton_NYCSchoolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DCAAC4258FE6AD00B677FC /* _0201220_Gifton_NYCSchoolsTests.swift */; };
@@ -101,7 +100,6 @@
 		60DCAAAA258FE6A900B677FC /* 20201220-Gifton-NYCSchools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "20201220-Gifton-NYCSchools.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60DCAAAD258FE6A900B677FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60DCAAAF258FE6A900B677FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		60DCAAB1258FE6A900B677FC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		60DCAAB6258FE6AC00B677FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60DCAAB9258FE6AC00B677FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60DCAABB258FE6AC00B677FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -236,7 +234,6 @@
 			isa = PBXGroup;
 			children = (
 				600E9F94258FEEB6003D3D6B /* Components */,
-				60DCAAB1258FE6A900B677FC /* ViewController.swift */,
 				600E9F6C258FEA26003D3D6B /* SchoolsController.swift */,
 				600E9F71258FEA2D003D3D6B /* SchoolDetailController.swift */,
 			);
@@ -426,7 +423,6 @@
 				600E9F96258FEEC5003D3D6B /* SchoolCell.swift in Sources */,
 				60614E65258FE7A300E115E7 /* CGSize.swift in Sources */,
 				600E9F88258FEBB7003D3D6B /* SchoolsViewmodel.swift in Sources */,
-				60DCAAB2258FE6A900B677FC /* ViewController.swift in Sources */,
 				60614E6B258FE7A300E115E7 /* Device.swift in Sources */,
 				600E9F8D258FEBCE003D3D6B /* SchoolDetailViewmodel.swift in Sources */,
 				600E9FA9258FEFC7003D3D6B /* School.swift in Sources */,

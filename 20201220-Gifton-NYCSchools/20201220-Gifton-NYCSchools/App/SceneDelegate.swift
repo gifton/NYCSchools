@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             // Set coordinator and start it
             window.windowScene = windowScene
             window.makeKeyAndVisible()
-            window.rootViewController = UINavigationController(rootViewController: SchoolsController())
+            window.rootViewController = UINavigationController(rootViewController: SchoolsController(viewmodel: SchoolsViewmodel()))
             
         }
     }

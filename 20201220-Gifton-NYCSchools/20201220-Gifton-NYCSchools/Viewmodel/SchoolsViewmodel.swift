@@ -7,8 +7,20 @@
 
 import Foundation
 
-
 class SchoolsViewmodel: Viewmodel {
+    
+    var uuid: UUID {
+        return UUID()
+    }
+    
+    var id: String {
+        return "schoolCVM"
+    }
+    
+    static func == (lhs: SchoolsViewmodel, rhs: SchoolsViewmodel) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
     func refresh(completion: () -> ()) {
         ///
         downloadSchools(completion: nil)
@@ -17,12 +29,22 @@ class SchoolsViewmodel: Viewmodel {
     
     // MARK: Private vars
     private var _testScores: AllTestaScores?
-    private var _schools: Schools?
+    private var _schools: Schools? {
+        didSet {
+            print("set schools")
+        }
+    }
     
-    // MARK: public vars
-    public var schools: Schools? { return _schools }
+    // MARK: pu blic vars
+    public var schools: [SchoolCellViewModel]? { return _schools?.toViewmodels() }
     public var testScores: AllTestaScores? { return _testScores }
     
+    public func start(completion: @escaping (Error?) -> ()) {
+        downloadSchools { (err) in
+            completion(err)
+            self.assignTestScores()
+        }
+    }
     
 }
 
@@ -31,41 +53,54 @@ class SchoolsViewmodel: Viewmodel {
 extension SchoolsViewmodel {
     
     // recieve schools
-    func downloadSchools(completion: ((Error?, Schools?) -> ())?) {
+    func downloadSchools(completion: ((Error?) -> ())?) {
+        
         do {
             _schools = try Schools.init(fromURL: URL.Endpoints.allSchools)
-            DispatchQueue.main.async {
-                completion?(nil, self.schools)
-                self.downloadTestScores()
-            }
+            
+            completion?(nil)
+            
             
         } catch (let err) {
-            print(err)
             DispatchQueue.main.async {
-                completion?(err, nil)
+                completion?(err)
             }
         }
     }
     
     // recieve test scores
-    func downloadTestScores() {
+    func assignTestScores() {
         do {
             _testScores = try AllTestaScores.init(fromURL: URL.Endpoints.testScores)
+            guard let scores = _testScores, let schools = schools else { return }
+            
+            print(scores.count, schools.count)
+            
+            for score in scores{
+                var currentSchool = schools.schools.first { $0.dbn == score.dbn }
+                currentSchool?.setScores(score)
+            }
+            
         } catch(let err) {
             print(err)
         }
     }
     
     
-    func school(index: Int) -> School {
-        guard let schools = schools else { return }
-        let school = schools[index]
+    // return school from index to assign test schores, orretrieve info from tapped cell
+    func school(index: Int) -> School? {
+        
+        guard let schools = schools else { return nil }
+        var school = schools.schools[index]
         let scores = testScores?.first(where: { (ts) -> Bool in
             ts.dbn == school.dbn
         })
+        
         if let score = scores {
-            school.testScores = score
+            school.setScores(score)
         }
+        
+        return nil
     }
     
 }

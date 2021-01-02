@@ -4,25 +4,24 @@ import Foundation
 // MARK: - School
 struct School: Codable {
     let dbn, schoolName, overviewParagraph, neighborhood: String
-    let location, phoneNumber, schoolEmail, website: String
-    let finalgrades, totalStudents, extracurricularActivities, schoolSports: String
+    let location, phoneNumber, website: String
+    let finalgrades, totalStudents: String
     let attendanceRate, primaryAddressLine1, city: String
 
     enum CodingKeys: String, CodingKey {
+        
         case dbn
         case schoolName = "school_name"
         case overviewParagraph = "overview_paragraph"
         case neighborhood, location
         case phoneNumber = "phone_number"
-        case schoolEmail = "school_email"
         case website, finalgrades
         case totalStudents = "total_students"
-        case extracurricularActivities = "extracurricular_activities"
-        case schoolSports = "school_sports"
         case attendanceRate = "attendance_rate"
         case primaryAddressLine1 = "primary_address_line_1"
         case city
         case testScores
+        
     }
     
     private(set) var testScores: TestScores?

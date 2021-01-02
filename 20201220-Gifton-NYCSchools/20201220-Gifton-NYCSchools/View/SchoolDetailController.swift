@@ -2,6 +2,6 @@
 import UIKit
 
 
-final class SchoolDetailController: Controller {
+final class SchoolDetailController: Controller<SchoolDetailViewmodel> {
     
 }
