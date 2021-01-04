@@ -392,7 +392,7 @@ private extension SchoolDetailController {
     }
     
     func createStyleLine() -> UIView {
-        var v = UIView(withColor: Colors.lightGray)
+        let v = UIView(withColor: Colors.lightGray)
         v.frame.size = .init(4, 45)
         v.layer.cornerRadius = 2
         v.layer.masksToBounds = true

@@ -55,7 +55,7 @@ extension SchoolsViewmodel {
     func downloadSchools(completion: ((Error?) -> ())?) {
         
         do {
-            var schools = try Schools.init(fromURL: URL.Endpoints.allSchools)
+            let schools = try Schools.init(fromURL: URL.Endpoints.allSchools)
             _schools.append(contentsOf: schools)
             
             completion?(nil)

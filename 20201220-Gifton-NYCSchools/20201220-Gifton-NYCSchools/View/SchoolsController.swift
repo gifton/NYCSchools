@@ -18,7 +18,6 @@ final class SchoolsController: Controller<SchoolsViewmodel> {
                 print(err as Any)
             }
 
-            assert(self.viewmodel.schools != nil)
             self.setView()
             
         }
@@ -147,7 +146,7 @@ private extension SchoolsController {
                 head.searchCompletion { [weak self] (pred) in
                     print(pred)
                     if let SELF = self {
-//                        SELF.viewmodel.sear
+                        // update viewmodel here
                     }
                 }
                 return head
