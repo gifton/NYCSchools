@@ -46,7 +46,8 @@ final class SchoolsController: Controller<SchoolsViewmodel> {
 extension SchoolsController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        guard let selectedSchool = viewmodel.schools?[indexPath.row].school, let nav = navigationController else { return }
+        guard let nav = navigationController else { return }
+        let selectedSchool = viewmodel.viewSchool(atIndex: indexPath.row)
         
         let vm = SchoolDetailViewmodel(school: selectedSchool)
         nav.present(SchoolDetailController(viewmodel: vm), animated: true) {
@@ -61,24 +62,18 @@ private extension SchoolsController {
     
     func setView() {
         
-        if let _ = viewmodel.schools {
-            
-            collectionView = UICollectionView(frame: Device.frame, collectionViewLayout: generateLayout())
-            collectionView.registerReusableView(SchoolsListHeader.self, kind: UICollectionView.elementKindSectionHeader)
-            collectionView.registerCell(SchoolCell.self)
-            collectionView.isPrefetchingEnabled = false
-            collectionView.delegate = self
-            collectionView.backgroundColor = .black
-            collectionView.contentInsetAdjustmentBehavior = .always
-            collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-            collectionView.showsVerticalScrollIndicator = false
-            configureDataSource()
-            collectionView.dataSource = contentDataSource
-            view.addSubview(collectionView)
-            
-        } else {
-            
-        }
+        collectionView = UICollectionView(frame: Device.frame, collectionViewLayout: generateLayout())
+        collectionView.registerReusableView(SchoolsListHeader.self, kind: UICollectionView.elementKindSectionHeader)
+        collectionView.registerCell(SchoolCell.self)
+        collectionView.isPrefetchingEnabled = false
+        collectionView.delegate = self
+        collectionView.backgroundColor = .black
+        collectionView.contentInsetAdjustmentBehavior = .always
+        collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        collectionView.showsVerticalScrollIndicator = false
+        configureDataSource()
+        collectionView.dataSource = contentDataSource
+        view.addSubview(collectionView)
         
     }
     
@@ -143,11 +138,12 @@ private extension SchoolsController {
         guard let schools = schools else { return }
         snapshot.appendSections([.main])
         snapshot.appendItems(schools, toSection: .main)
+        
         contentDataSource.supplementaryViewProvider = {
             (collectionView: UICollectionView, kind: String, indexPath: IndexPath) -> UICollectionReusableView? in
             if kind == UICollectionView.elementKindSectionHeader {
                 let head = collectionView.dequeueReusableHeader(cellWithClass: SchoolsListHeader.self, for: indexPath)
-                head.setCount(self.viewmodel.schools?.count ?? 0)
+                head.setCount(self.viewmodel.schools.count)
                 head.searchCompletion { [weak self] (pred) in
                     print(pred)
                     if let SELF = self {

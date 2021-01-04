@@ -248,24 +248,156 @@ private extension SchoolDetailController {
     }
     
     func setCountCard(onView: UIView) {
-        let titleLabel = UILabel()
-        titleLabel.text = "Grades"
-        titleLabel.font = UIFont.preferredFont(forTextStyle: .title1)
-        titleLabel.adjustsFontForContentSizeCategory = true
-        titleLabel.textColor = UIColor.white
-        titleLabel.textAlignment = .center
-        titleLabel.sizeToFit()
-        titleLabel.left = CGFloat.zero.addPadding()
-        titleLabel.top = CGFloat.zero.addPadding()
-        onView.addSubview(titleLabel)
-    }
-    
-    func setScoreContent() {
+        
         if (viewmodel.testScores == nil) {
             
+            print("setting viewmodel" )
+            let img = UIImageView(
+                image: UIImage(
+                    systemName: "eye.slash",
+                    withConfiguration: UIImage.SymbolConfiguration(pointSize: 35, weight: .bold)
+                )
+            )
+            
+            img.contentMode = .scaleAspectFit
+            img.frame.size = .init(50)
+            img.tintColor = Colors.offWhite
+            img.center.x = onView.width / 2
+            img.top = CGFloat.zero.addPadding(.xLarge)
+            onView.addSubview(img)
+            let titleLabel = UILabel()
+            titleLabel.text = "There arent any test Scores available for this school"
+            titleLabel.font = UIFont.preferredFont(forTextStyle: .body)
+            titleLabel.width = onView.width.subtractPadding(.xLarge, multiplier: 2)
+            titleLabel.numberOfLines = 2
+            titleLabel.adjustsFontForContentSizeCategory = true
+            titleLabel.textColor = UIColor.white
+            titleLabel.textAlignment = .center
+            titleLabel.sizeToFit()
+            titleLabel.center.x = onView.center.x
+            titleLabel.top = img.bottom
+            onView.addSubview(titleLabel)
+            
         } else {
+            guard let testScores = viewmodel.testScores else { print("damn"); return }
+            let titleLabel = UILabel()
+            titleLabel.text = "Test Scores"
+            titleLabel.font = UIFont.preferredFont(forTextStyle: .title1)
+            titleLabel.adjustsFontForContentSizeCategory = true
+            titleLabel.textColor = UIColor.white
+            titleLabel.textAlignment = .center
+            titleLabel.sizeToFit()
+            titleLabel.left = CGFloat.zero.addPadding()
+            titleLabel.top = CGFloat.zero.addPadding()
+            onView.addSubview(titleLabel)
+            
+            // testers count
+            let testersLabel = UILabel()
+            testersLabel.text = testScores.numOfSatTestTakers + " testers"
+            testersLabel.font = UIFont.preferredFont(forTextStyle: .body)
+            testersLabel.adjustsFontForContentSizeCategory = true
+            testersLabel.textColor = UIColor.gray
+            testersLabel.textAlignment = .center
+            testersLabel.sizeToFit()
+            testersLabel.left = titleLabel.left
+            testersLabel.top = titleLabel.bottom
+            onView.addSubview(testersLabel)
+            // grades (reading, writing, math)
+            
+            let gradeCard = UIView(withColor: UIColor.white.withAlphaComponent(0.15))
+            gradeCard.layer.cornerRadius = 10
+            gradeCard.layer.masksToBounds = true
+            gradeCard.width = onView.width.subtractPadding(.xXLarge, multiplier: 2)
+            gradeCard.height = onView.height / 2.75
+            onView.addSubview(gradeCard)
+            gradeCard.center.x = onView.width / 2
+            gradeCard.top = testersLabel.bottom.addPadding(.xXLarge)
+                
+                
+            // reading section
+            // icon
+            let readingIcon = ContentIcon(type: .reading, size: .xxXLarge, light: false)
+            // label
+            let readingLbl = UILabel()
+            readingLbl.text = testScores.satCriticalReadingAvgScore + " avg."
+            readingLbl.font = UIFont.preferredFont(forTextStyle: .headline)
+            readingLbl.adjustsFontForContentSizeCategory = true
+            readingLbl.textColor = UIColor.gray
+            readingLbl.textAlignment = .center
+            readingLbl.sizeToFit()
+            // set
+            readingLbl.left = CGFloat.zero.addPadding(.xLarge)
+            readingIcon.centerY = (gradeCard.height / 2.5)
+            readingIcon.centerX = (readingLbl.centerX)
+            readingLbl.top = readingIcon.bottom.addPadding()
+            // add
+            gradeCard.addSubview(readingIcon)
+            gradeCard.addSubview(readingLbl)
+            // style line
+            let readingLine = createStyleLine()
+            readingLine.centerY = gradeCard.height / 2.5
+            readingLine.left = readingLbl.right.addPadding()
+            gradeCard.addSubview(readingLine)
+            
+            // writing section
+            // icon
+            let writingIcon = ContentIcon(type: .writing, size: .xxXLarge, light: false)
+            // label
+            let writingLbl = UILabel()
+            writingLbl.text = testScores.satWritingAvgScore + " avg."
+            writingLbl.font = UIFont.preferredFont(forTextStyle: .headline)
+            writingLbl.adjustsFontForContentSizeCategory = true
+            writingLbl.textColor = UIColor.gray
+            writingLbl.textAlignment = .center
+            writingLbl.sizeToFit()
+            // set
+            writingLbl.left = readingLine.right.addPadding()
+            writingIcon.centerY = (gradeCard.height / 2.5)
+            writingIcon.centerX = (writingLbl.centerX)
+            writingLbl.top = writingIcon.bottom.addPadding()
+            // add
+            gradeCard.addSubview(writingIcon)
+            gradeCard.addSubview(writingLbl)
+            // style line
+            let writingLine = createStyleLine()
+            writingLine.centerY = gradeCard.height / 2.5
+            writingLine.left = writingLbl.right.addPadding()
+            gradeCard.addSubview(writingLine)
+            
+            // math section
+            // icon
+            let mathIcon = ContentIcon(type: .reading, size: .xxXLarge, light: false)
+            // label
+            let mathLbl = UILabel()
+            mathLbl.text = testScores.satCriticalReadingAvgScore + " avg."
+            mathLbl.font = UIFont.preferredFont(forTextStyle: .headline)
+            mathLbl.adjustsFontForContentSizeCategory = true
+            mathLbl.textColor = UIColor.gray
+            mathLbl.textAlignment = .center
+            mathLbl.sizeToFit()
+            // set
+            mathLbl.left = writingLine.right.addPadding(.medium)
+            mathIcon.centerY = (gradeCard.height / 2.5)
+            mathIcon.centerX = (mathLbl.centerX)
+            mathLbl.top = mathIcon.bottom.addPadding()
+            // add
+            gradeCard.addSubview(mathIcon)
+            gradeCard.addSubview(mathLbl)
             
         }
+        
+        
+        
+        
+    }
+    
+    func createStyleLine() -> UIView {
+        var v = UIView(withColor: Colors.lightGray)
+        v.frame.size = .init(4, 45)
+        v.layer.cornerRadius = 2
+        v.layer.masksToBounds = true
+        
+        return v
     }
 }
 

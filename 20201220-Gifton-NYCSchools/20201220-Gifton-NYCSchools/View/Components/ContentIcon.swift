@@ -4,7 +4,7 @@ import UIKit
 
 
 class ContentIcon: UIView {
-    init(type: IconType, size: Styles.FontSize) {
+    init(type: IconType, size: Styles.FontSize, light: Bool = true) {
         super.init(frame: .init(origin: .zero, size: .init(size.rawValue)))
         
         let img = UIImageView(image: UIImage(
@@ -12,7 +12,7 @@ class ContentIcon: UIView {
             withConfiguration:  UIImage.SymbolConfiguration(pointSize: size.rawValue / 1.5, weight: .bold)
         ))
         
-        img.tintColor = UIColor.white
+        img.tintColor = (light) ? UIColor.white : UIColor.gray
         
         img.frame.center = center
         img.contentMode = .scaleToFill
