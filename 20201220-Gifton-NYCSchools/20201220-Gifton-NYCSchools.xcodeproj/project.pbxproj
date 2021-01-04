@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6009665925A25B7400E6A762 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6009665825A25B7400E6A762 /* UIView.swift */; };
+		6009665E25A273A600E6A762 /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6009665D25A273A600E6A762 /* PaddedLabel.swift */; };
+		6009666625A29AA800E6A762 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6009666525A29AA800E6A762 /* UIStackView.swift */; };
+		6009666B25A2ED4600E6A762 /* ContentIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6009666A25A2ED4600E6A762 /* ContentIcon.swift */; };
+		6009667025A2F5E700E6A762 /* ListTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6009666F25A2F5E700E6A762 /* ListTile.swift */; };
+		6009667525A31C5C00E6A762 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6009667425A31C5C00E6A762 /* UILabel.swift */; };
+		6009667A25A31D5600E6A762 /* SchoolDetailContentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6009667925A31D5600E6A762 /* SchoolDetailContentCard.swift */; };
 		600E9F6D258FEA26003D3D6B /* SchoolsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600E9F6C258FEA26003D3D6B /* SchoolsController.swift */; };
 		600E9F72258FEA2D003D3D6B /* SchoolDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600E9F71258FEA2D003D3D6B /* SchoolDetailController.swift */; };
 		600E9F77258FEA6E003D3D6B /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600E9F76258FEA6E003D3D6B /* Controller.swift */; };
@@ -38,6 +45,7 @@
 		60614E6A258FE7A300E115E7 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60614E5B258FE7A300E115E7 /* CGRect.swift */; };
 		60614E6B258FE7A300E115E7 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60614E5C258FE7A300E115E7 /* Device.swift */; };
 		60614E6C258FE7A300E115E7 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60614E5D258FE7A300E115E7 /* Color.swift */; };
+		60C0D00125A1302100B06631 /* UIcollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C0D00025A1302000B06631 /* UIcollectionView.swift */; };
 		60C3D50025991E9F005C505F /* SchoolCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C3D4FF25991E9F005C505F /* SchoolCellViewModel.swift */; };
 		60DCAAAE258FE6A900B677FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DCAAAD258FE6A900B677FC /* AppDelegate.swift */; };
 		60DCAAB0258FE6A900B677FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60DCAAAF258FE6A900B677FC /* SceneDelegate.swift */; };
@@ -65,6 +73,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6009665825A25B7400E6A762 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		6009665D25A273A600E6A762 /* PaddedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
+		6009666525A29AA800E6A762 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
+		6009666A25A2ED4600E6A762 /* ContentIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentIcon.swift; sourceTree = "<group>"; };
+		6009666F25A2F5E700E6A762 /* ListTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTile.swift; sourceTree = "<group>"; };
+		6009667425A31C5C00E6A762 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		6009667925A31D5600E6A762 /* SchoolDetailContentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolDetailContentCard.swift; sourceTree = "<group>"; };
 		600E9F6C258FEA26003D3D6B /* SchoolsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolsController.swift; sourceTree = "<group>"; };
 		600E9F71258FEA2D003D3D6B /* SchoolDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolDetailController.swift; sourceTree = "<group>"; };
 		600E9F76258FEA6E003D3D6B /* Controller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
@@ -96,6 +111,7 @@
 		60614E5B258FE7A300E115E7 /* CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
 		60614E5C258FE7A300E115E7 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		60614E5D258FE7A300E115E7 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		60C0D00025A1302000B06631 /* UIcollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIcollectionView.swift; sourceTree = "<group>"; };
 		60C3D4FF25991E9F005C505F /* SchoolCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolCellViewModel.swift; sourceTree = "<group>"; };
 		60DCAAAA258FE6A900B677FC /* 20201220-Gifton-NYCSchools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "20201220-Gifton-NYCSchools.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		60DCAAAD258FE6A900B677FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +169,10 @@
 				600E9F95258FEEC5003D3D6B /* SchoolCell.swift */,
 				600E9F9D258FEF2A003D3D6B /* TestScoreView.swift */,
 				600E9FA2258FEF41003D3D6B /* SchoolsListHeader.swift */,
+				6009665D25A273A600E6A762 /* PaddedLabel.swift */,
+				6009666A25A2ED4600E6A762 /* ContentIcon.swift */,
+				6009666F25A2F5E700E6A762 /* ListTile.swift */,
+				6009667925A31D5600E6A762 /* SchoolDetailContentCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -209,11 +229,15 @@
 				60614E54258FE7A300E115E7 /* UIColor.swift */,
 				60614E55258FE7A300E115E7 /* NSObject.swift */,
 				60614E56258FE7A300E115E7 /* CGSize.swift */,
+				60C0D00025A1302000B06631 /* UIcollectionView.swift */,
 				60614E57258FE7A300E115E7 /* String.swift */,
 				60614E58258FE7A300E115E7 /* CGPoint.swift */,
 				60614E59258FE7A300E115E7 /* DateFormatter.swift */,
 				60614E5A258FE7A300E115E7 /* CGFloat.swift */,
 				60614E5B258FE7A300E115E7 /* CGRect.swift */,
+				6009665825A25B7400E6A762 /* UIView.swift */,
+				6009666525A29AA800E6A762 /* UIStackView.swift */,
+				6009667425A31C5C00E6A762 /* UILabel.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -423,17 +447,23 @@
 				600E9F96258FEEC5003D3D6B /* SchoolCell.swift in Sources */,
 				60614E65258FE7A300E115E7 /* CGSize.swift in Sources */,
 				600E9F88258FEBB7003D3D6B /* SchoolsViewmodel.swift in Sources */,
+				6009667A25A31D5600E6A762 /* SchoolDetailContentCard.swift in Sources */,
 				60614E6B258FE7A300E115E7 /* Device.swift in Sources */,
 				600E9F8D258FEBCE003D3D6B /* SchoolDetailViewmodel.swift in Sources */,
+				60C0D00125A1302100B06631 /* UIcollectionView.swift in Sources */,
 				600E9FA9258FEFC7003D3D6B /* School.swift in Sources */,
 				60DCAAAE258FE6A900B677FC /* AppDelegate.swift in Sources */,
 				60DCAAB0258FE6A900B677FC /* SceneDelegate.swift in Sources */,
 				600E9F77258FEA6E003D3D6B /* Controller.swift in Sources */,
+				6009667025A2F5E700E6A762 /* ListTile.swift in Sources */,
 				60614E5E258FE7A300E115E7 /* Styles.swift in Sources */,
 				60614E63258FE7A300E115E7 /* UIColor.swift in Sources */,
+				6009665E25A273A600E6A762 /* PaddedLabel.swift in Sources */,
 				60614E66258FE7A300E115E7 /* String.swift in Sources */,
+				6009667525A31C5C00E6A762 /* UILabel.swift in Sources */,
 				600E9FC925916B68003D3D6B /* URLBuilder.swift in Sources */,
 				60614E67258FE7A300E115E7 /* CGPoint.swift in Sources */,
+				6009665925A25B7400E6A762 /* UIView.swift in Sources */,
 				600E9FCE25916DD3003D3D6B /* URLSession+Extension.swift in Sources */,
 				600E9FB625902DED003D3D6B /* NetworkGateway.swift in Sources */,
 				60614E61258FE7A300E115E7 /* ManagedObjectContext.swift in Sources */,
@@ -441,10 +471,12 @@
 				60614E62258FE7A300E115E7 /* Managed.swift in Sources */,
 				60614E68258FE7A300E115E7 /* DateFormatter.swift in Sources */,
 				600E9F7C258FEB52003D3D6B /* Viewmodel.swift in Sources */,
+				6009666625A29AA800E6A762 /* UIStackView.swift in Sources */,
 				600E9FB1258FEFD6003D3D6B /* TestScores.swift in Sources */,
 				60614E64258FE7A300E115E7 /* NSObject.swift in Sources */,
 				600E9FBB25902FC9003D3D6B /* Encoder.swift in Sources */,
 				60C3D50025991E9F005C505F /* SchoolCellViewModel.swift in Sources */,
+				6009666B25A2ED4600E6A762 /* ContentIcon.swift in Sources */,
 				600E9F6D258FEA26003D3D6B /* SchoolsController.swift in Sources */,
 				60614E60258FE7A300E115E7 /* PersistantService.swift in Sources */,
 				60614E5F258FE7A300E115E7 /* DataGenerator.swift in Sources */,

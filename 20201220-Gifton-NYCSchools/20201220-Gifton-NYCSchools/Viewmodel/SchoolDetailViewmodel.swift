@@ -28,7 +28,6 @@ class SchoolDetailViewmodel: Viewmodel {
     }
     
     init(school: School) {
-        assert(school.testScores != nil)
         
         self.school = school
         
@@ -41,12 +40,18 @@ class SchoolDetailViewmodel: Viewmodel {
         return school.schoolName
     }
     
+    public var phone: String {
+        return school.phoneNumber
+    }
+    
     public var overview: String {
         return school.overviewParagraph
     }
     
     public var location: String {
-        return school.location
+        // quick fix didnt realize locaiton includes longitude & latitude,
+        // cutting it out of string instead of taking the time to find another object variable that satisfies reqs better
+        return String(school.location.split(separator: "(")[0])
     }
     
     public var website: URL? {

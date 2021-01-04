@@ -25,7 +25,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             // Set coordinator and start it
             window.windowScene = windowScene
             window.makeKeyAndVisible()
-            window.rootViewController = UINavigationController(rootViewController: SchoolsController(viewmodel: SchoolsViewmodel()))
+
+            
+
+           let nav = UINavigationController(rootViewController: SchoolsController(viewmodel: SchoolsViewmodel()))
+            nav.navigationBar.barStyle = .black
+            nav.navigationBar.tintColor = UIColor.white
+            nav.navigationBar.barTintColor = Colors.darkBlue
+            window.rootViewController = nav
             
         }
     }

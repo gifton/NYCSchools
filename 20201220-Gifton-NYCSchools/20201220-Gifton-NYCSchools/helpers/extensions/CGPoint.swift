@@ -11,8 +11,8 @@ extension CGPoint {
     }
     
     // point from single value
-    public init(_ size: CGFloat)  {
-        self.init(x: size, y: size)
+    public init(_ value: CGFloat)  {
+        self.init(x: value, y: value)
     }
     
     mutating func add(vector: CGVector) {

@@ -29,20 +29,17 @@ class SchoolsViewmodel: Viewmodel {
     
     // MARK: Private vars
     private var _testScores: AllTestaScores?
-    private var _schools: Schools? {
-        didSet {
-            print("set schools")
-        }
-    }
+    private var _schools: Schools?
     
-    // MARK: pu blic vars
+    // MARK: public vars
     public var schools: [SchoolCellViewModel]? { return _schools?.toViewmodels() }
     public var testScores: AllTestaScores? { return _testScores }
     
     public func start(completion: @escaping (Error?) -> ()) {
         downloadSchools { (err) in
-            completion(err)
             self.assignTestScores()
+            completion(err)
+            
         }
     }
     
@@ -90,8 +87,11 @@ extension SchoolsViewmodel {
     // return school from index to assign test schores, orretrieve info from tapped cell
     func school(index: Int) -> School? {
         
-        guard let schools = schools else { return nil }
-        var school = schools.schools[index]
+        guard let _schools = _schools else { print("couldnt find school"); return nil }
+        var school = _schools[index]
+        
+        if school.testScores != nil { print("returning school"); return school }
+        
         let scores = testScores?.first(where: { (ts) -> Bool in
             ts.dbn == school.dbn
         })
